@@ -1,6 +1,6 @@
 {
   "name": "simpled-db",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A promise-based wrapper for indexeddb with a simplified API.",
   "main": "index.js",
   "scripts": {
