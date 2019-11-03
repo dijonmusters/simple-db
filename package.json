@@ -1,0 +1,27 @@
+{
+  "name": "simple-db",
+  "version": "1.0.0",
+  "description": "A promise-based wrapper for indexeddb with a simplified API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dijonmusters/simple-db.git"
+  },
+  "keywords": [
+    "simple",
+    "database",
+    "indexeddb",
+    "storage",
+    "local",
+    "fast"
+  ],
+  "author": "Jon Meyers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dijonmusters/simple-db/issues"
+  },
+  "homepage": "https://github.com/dijonmusters/simple-db#readme"
+}
