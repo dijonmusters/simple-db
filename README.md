@@ -41,13 +41,20 @@ set('todos', 'learn', todo)
   .then(() => console.log('successfully saved todo in db'));
 ```
 
-Read todo from db.
+Get todo from db.
 
 ```
 // get('db-name', 'key')
 
 get('todos', 'learn')
   .then(todo => console.log(todo));
+```
+
+Get all todos from db.
+
+```
+get('todos')
+  .then(todos => console.log(todo));
 ```
 
 Remove todo from db.
@@ -85,7 +92,7 @@ await set('todos', 'learn', todo);
 console.log('successfully saved todo in db');
 ```
 
-Read todo from db.
+Get todo from db.
 
 ```
 import { get } from 'simple-db';
@@ -94,6 +101,13 @@ import { get } from 'simple-db';
 
 const todo = await get('todos', 'learn');
 console.log(todo);
+```
+
+Get all todos from db.
+
+```
+const todos = await get('todos');
+console.log(todos);
 ```
 
 Remove todo from db.
