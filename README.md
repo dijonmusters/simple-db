@@ -26,7 +26,13 @@ import { set, get, remove, clear } from 'simple-db';
 
 #### Using Promises
 
-Create some data and write to db.
+**Write data to db**
+
+```
+set('db-name', 'key', data)
+```
+
+Example
 
 ```
 const todo = {
@@ -35,49 +41,71 @@ const todo = {
   isComplete: false
 };
 
-// set('db-name', 'key', data)
-
 set('todos', 'learn', todo)
   .then(() => console.log('successfully saved todo in db'));
 ```
 
-Get todo from db.
+**Get todo from db**
 
 ```
-// get('db-name', 'key')
+get('db-name', 'key')
+```
 
+Example
+
+```
 get('todos', 'learn')
   .then(todo => console.log(todo));
 ```
 
-Get all todos from db.
+**Get all todos from db**
+
+```
+get('db-name')
+```
+
+Example
 
 ```
 get('todos')
   .then(todos => console.log(todo));
 ```
 
-Remove todo from db.
+**Remove todo from db**
 
 ```
-// remove('db-name', 'key')
+remove('db-name', 'key')
+```
 
+Example
+
+```
 remove('todos', 'learn')
   .then(() => console.log('Removed todo from db'));
 ```
 
-Remove all todos from db.
+**Remove all todos from db**
 
 ```
-// clear('db-name')
+clear('db-name')
+```
 
+Example
+
+```
 clear('todos')
   .then(() => console.log('Removed all todos from db'));
 ```
 
 #### Using Async/Await
 
-Create some data and write to db.
+**Write data to db**
+
+```
+set('db-name', 'key', data)
+```
+
+Example
 
 ```
 const todo = {
@@ -86,44 +114,60 @@ const todo = {
   isComplete: false
 };
 
-// set('db-name', 'key', data)
-
 await set('todos', 'learn', todo);
 console.log('successfully saved todo in db');
 ```
 
-Get todo from db.
+**Get todo from db**
+
+```
+get('db-name', 'key')
+```
+
+Example
 
 ```
 import { get } from 'simple-db';
-
-// get('db-name', 'key')
 
 const todo = await get('todos', 'learn');
 console.log(todo);
 ```
 
-Get all todos from db.
+**Get all todos from db**
+
+```
+get('db-name')
+```
+
+Example
 
 ```
 const todos = await get('todos');
 console.log(todos);
 ```
 
-Remove todo from db.
+**Remove todo from db**
 
 ```
-// remove('db-name', 'key')
+remove('db-name', 'key')
+```
 
+Example
+
+```
 await remove('todos', 'learn')
 console.log('Removed todo from db');
 ```
 
-Remove all todos from db.
+**Remove all todos from db**
 
 ```
-// clear('db-name')
+clear('db-name')
+```
 
+Example
+
+```
 await clear('todos');
 console.log('Removed all todos from db');
 ```
@@ -132,10 +176,10 @@ console.log('Removed all todos from db');
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
-## Authors
+## Author
 
-* **Jon Meyers** - [dijonmusters](https://github.com/dijonmusters)
+**Jon Meyers** - [dijonmusters](https://github.com/dijonmusters)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License.
