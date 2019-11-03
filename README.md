@@ -1,4 +1,4 @@
-# Simple DB
+# Simpled DB
 
 A promise-based wrapper for indexeddb with a simplified API.
 
@@ -15,13 +15,13 @@ You will need to download Node.js by visiting their ![downloads](https://nodejs.
 Use npm to install the package.
 
 ```
-npm i simple-db
+npm i simpled-db
 ```
 
 Import functions from package.
 
 ```
-import { set, get, remove, clear } from 'simple-db';
+import { set, get, remove, clear } from 'simpled-db';
 ```
 
 #### Using Promises
