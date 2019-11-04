@@ -68,7 +68,7 @@ Example
 
 ```
 get('todos')
-  .then(todos => console.log(todo));
+  .then(todos => console.log(todos));
 ```
 
 **Remove todo from db**
