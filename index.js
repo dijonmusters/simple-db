@@ -1,6 +1,6 @@
 const getDb = collection => {
   return new Promise((resolve, reject) => {
-    const request = indexedDB.open('db', 1);
+    const request = indexedDB.open(collection, 1);
 
     request.onupgradeneeded = event => {
       const db = event.target.result;
