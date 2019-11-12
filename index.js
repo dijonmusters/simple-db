@@ -151,7 +151,15 @@ const clear = async collection => {
   return clearStore(store)
 }
 
+const exposed = {
+  get,
+  set,
+  clear,
+  remove
+}
+
 export {
+  exposed as default,
   get,
   set,
   clear,
