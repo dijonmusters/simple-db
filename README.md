@@ -1,6 +1,6 @@
 # Simpled DB
 
-A promise-based wrapper for indexeddb with a simplified API.
+A promise-based wrapper for indexeddb with a simplified API. Think localStorage but for object storage!
 
 ## Getting Started
 
@@ -18,10 +18,10 @@ Use npm to install the package.
 npm i simpled-db
 ```
 
-Import functions from package.
+Import package in ES6 project.
 
 ```
-import { set, get, remove, clear } from 'simpled-db';
+import db from 'simpled-db';
 ```
 
 #### Using Promises
@@ -41,7 +41,7 @@ const todo = {
   isComplete: false
 };
 
-set('todos', 'learn', todo)
+db.set('todos', 'learn', todo)
   .then(() => console.log('successfully saved todo in db'));
 ```
 
@@ -54,7 +54,7 @@ get('db-name', 'key')
 Example
 
 ```
-get('todos', 'learn')
+db.get('todos', 'learn')
   .then(todo => console.log(todo));
 ```
 
@@ -67,7 +67,7 @@ get('db-name')
 Example
 
 ```
-get('todos')
+db.get('todos')
   .then(todos => console.log(todos));
 ```
 
@@ -80,7 +80,7 @@ remove('db-name', 'key')
 Example
 
 ```
-remove('todos', 'learn')
+db.remove('todos', 'learn')
   .then(() => console.log('Removed todo from db'));
 ```
 
@@ -93,7 +93,7 @@ clear('db-name')
 Example
 
 ```
-clear('todos')
+db.clear('todos')
   .then(() => console.log('Removed all todos from db'));
 ```
 
@@ -114,7 +114,7 @@ const todo = {
   isComplete: false
 };
 
-await set('todos', 'learn', todo);
+await db.set('todos', 'learn', todo);
 console.log('successfully saved todo in db');
 ```
 
@@ -127,9 +127,7 @@ get('db-name', 'key')
 Example
 
 ```
-import { get } from 'simple-db';
-
-const todo = await get('todos', 'learn');
+const todo = await db.get('todos', 'learn');
 console.log(todo);
 ```
 
@@ -142,7 +140,7 @@ get('db-name')
 Example
 
 ```
-const todos = await get('todos');
+const todos = await db.get('todos');
 console.log(todos);
 ```
 
@@ -155,7 +153,7 @@ remove('db-name', 'key')
 Example
 
 ```
-await remove('todos', 'learn')
+await db.remove('todos', 'learn')
 console.log('Removed todo from db');
 ```
 
@@ -168,7 +166,7 @@ clear('db-name')
 Example
 
 ```
-await clear('todos');
+await db.clear('todos');
 console.log('Removed all todos from db');
 ```
 
