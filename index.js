@@ -146,6 +146,26 @@ const set = async (collection, key, data) => {
   return setToStore(store, obj)
 }
 
+const update = async (collection, key, data) => {
+  const { store } = await getStore(collection, 'readwrite');
+  const exists = await getFromStore(store, key);
+
+  const obj = {
+    key,
+    data,
+    timestamp: Date.now()
+  };
+
+  if (exists) {
+    await removeFromStore(store, key);
+    const mergedData = { ...exists.data, ...obj.data }
+    const merged = { ...obj, data: mergedData };
+    return setToStore(store, merged);
+  }
+
+  return setToStore(store, obj)
+}
+
 const clear = async collection => {
   const { store } = await getStore(collection, 'readwrite');
   return clearStore(store)
@@ -155,7 +175,8 @@ const exposed = {
   get,
   set,
   clear,
-  remove
+  remove,
+  update
 }
 
 export {
@@ -163,5 +184,6 @@ export {
   get,
   set,
   clear,
-  remove
+  remove,
+  update
 }
